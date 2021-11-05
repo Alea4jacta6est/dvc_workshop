@@ -1,0 +1,8 @@
+venv
+__pycache__
+data.pickle
+mnist_data
+reports
+*.h5
+*.joblib
+.DS_Store

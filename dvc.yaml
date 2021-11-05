@@ -1,0 +1,29 @@
+stages:
+  preprocess_mnist:
+    cmd: python src/preprocess.py
+    deps:
+    - src/preprocess.py
+    outs:
+    - data/data.pickle
+  train_keras:
+    cmd: python src/train_keras.py
+    deps:
+    - src/train_keras.py
+    - data/data.pickle
+    outs:
+    - models/mnist_model_5.h5
+  train_tree:
+    cmd: python src/train_forest.py
+    deps:
+    - src/train_forest.py
+    - data/data.pickle
+    outs:
+    - models/random_forest_50.joblib
+  evaluate:
+    cmd: python src/evaluate.py models/
+    deps:
+    - models/
+    - src/evaluate.py
+    metrics:
+    - reports/scores.json:
+        cache: false
