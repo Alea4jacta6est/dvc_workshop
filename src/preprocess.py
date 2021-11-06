@@ -25,8 +25,8 @@ def get_and_preprocess_data(save_data_path: str, num_classes: int = 10):
     x_test = x_test.reshape(x_test.shape[0], 28, 28, 1)
 
     # convert class vectors to binary class matrices
-    y_train = keras.utils.to_categorical(y_train, num_classes)
-    y_test = keras.utils.to_categorical(y_test, num_classes)
+    y_train = keras.utils.np_utils.to_categorical(y_train, num_classes)
+    y_test = keras.utils.np_utils.to_categorical(y_test, num_classes)
     x_train = x_train.astype('float32')
     x_test = x_test.astype('float32')
     x_train /= 255

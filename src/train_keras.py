@@ -2,6 +2,7 @@ import click
 import keras
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, Flatten, Conv2D, MaxPooling2D
+from tensorflow.keras import optimizers
 
 from preprocess import get_processed_data
 
@@ -31,7 +32,7 @@ def create_keras_model(num_classes: int):
     model.add(Dropout(0.5))
     model.add(Dense(num_classes, activation='softmax'))
     model.compile(loss=keras.losses.categorical_crossentropy,
-                  optimizer=keras.optimizers.Adadelta(),
+                  optimizer=optimizers.Adadelta(),
                   metrics=['accuracy'])
     return model
 

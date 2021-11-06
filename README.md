@@ -4,7 +4,7 @@
 
 1. Clone this repository
 
-2. Activate venv for Python 3.9 and `pip install -r requirements.txt` 
+2. Activate venv for Python 3.9 and `pip install -r requirements.txt` (+ install tensorflow for your OS)
 
 3. Use `pip install 'dvc[gdrive]'` to add gdrive 
 

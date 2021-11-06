@@ -1,4 +1,4 @@
-keras==2.7.0
+keras==2.6.0
 click==7.1.2
 dvc==2.8.2
 joblib==1.1.0
